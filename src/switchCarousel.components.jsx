@@ -2,15 +2,19 @@
 import SwitchCarousel from './SwitchCarousel.components';
  * @file implement a carousel, depends on react 
  */
-const { React } = require('react');
+const  React  = require('react');
 const { ReactDOM } = require('react-dom');
 const { ReactResizeDetector } =  require('react-resize-detector');
-const styled = require('styled-components');
+const  styled  = require('styled-components').default;
 const { css } = require('styled-components');
 
-const datatList = (Data) => {
-  return Data.map((elem,INDEX) => {
-    return (<div key={`SwitchCarousel-element-${INDEX}`} className="SwitchCarousel-element">{elem}</div>);
+function datatList(Data) {
+  return Data.map((elem, INDEX) => {
+    return React.createElement(
+      "div",
+      { key: `SwitchCarousel-element-${INDEX}`, className: "SwitchCarousel-element" },
+      elem
+    );
   });
   return days;
 };
@@ -53,10 +57,10 @@ const List = styled.div`
         width: ${props => props.width}px;
     }
 `;
-class SwitchCarousel extends React.Component {
+
+class  SwitchCarousel extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       elementWidth: 0,
       elementHeight: 0,
@@ -65,64 +69,74 @@ class SwitchCarousel extends React.Component {
     };
   }
 
-  onResize = (width, height) => {
-    console.log(width);
+  onResize(width, height) {
     this.setState({
       elementWidth: width,
       elementHeight: height
-    })
+    });
   }
 
-  switchView = (reverse) => {
+  switchView(reverse) {
     const length = this.props.list.length;
 
     const viewable = this.props.leftButton ? Math.floor(this.state.elementWidth / this.props.width) : Math.floor((this.state.elementWidth - 80) / this.props.width);
-    console.log(this.state.elementWidth, this.props.width, (this.state.elementWidth) / this.props.width,viewable);
-    
+
     let current;
     if (reverse) {
-      current = this.state.currentView > 0 && this.state.currentView - 1
+      current = this.state.currentView > 0 && this.state.currentView - 1;
     } else {
-      current = this.state.currentView < length - viewable && this.state.currentView + 1
+      current = this.state.currentView < length - viewable && this.state.currentView + 1;
     }
     this.setState({
       currentView: current
-    })
+    });
   }
 
   render() {
-    return (
-      <div className={this.props.className}>
-        <ReactResizeDetector
-          handleWidth
-          handleHeight
-          onResize={this.onResize}
-          render={({ width }) => (
-            <Wrapper pageWidth={width} width={this.props.width} length={this.props.list.length} lean={this.props.leftButton}>
-              <div className="SwitchCarousel-directionIcon" onClick={()=>this.switchView(true)}>
-                {this.props.leftButton ? this.props.leftButton : <div className="dayIcon"><i className="icon-left-open" /></div>}
-              </div>
-              <ListWrapper>
-                <List pageWidth={width} width={this.props.width} length={this.props.list.length} currentView={this.state.currentView}>
-                  {datatList(this.props.list)}
-                </List>  
-              </ListWrapper>
-              <div className="SwitchCarousel-directionIcon" onClick={() => this.switchView()}>
-                {this.props.leftButton ? this.props.rightButton : <div className="dayIcon"><i className="icon-right-open" /></div>}
-              </div>
-            </Wrapper>
-          )}
-        />
-      </div>
-    )
+    return React.createElement(
+      "div",
+      { className: this.props.className },
+      React.createElement(ReactResizeDetector, {
+        handleWidth: true,
+        handleHeight: true,
+        onResize: this.onResize,
+        render: ({ width }) => React.createElement(
+          Wrapper,
+          { pageWidth: width, width: this.props.width, length: this.props.list.length, lean: this.props.leftButton },
+          React.createElement(
+            "div",
+            { className: "SwitchCarousel-directionIcon", onClick: () => this.switchView(true) },
+            this.props.leftButton ? this.props.leftButton : React.createElement(
+              "div",
+              { className: "dayIcon" },
+              React.createElement("i", { className: "icon-left-open" })
+            )
+          ),
+          React.createElement(
+            ListWrapper,
+            null,
+            React.createElement(
+              List,
+              { pageWidth: width, width: this.props.width, length: this.props.list.length, currentView: this.state.currentView },
+              datatList(this.props.list)
+            )
+          ),
+          React.createElement(
+            "div",
+            { className: "SwitchCarousel-directionIcon", onClick: () => this.switchView() },
+            this.props.leftButton ? this.props.rightButton : React.createElement(
+              "div",
+              { className: "dayIcon" },
+              React.createElement("i", { className: "icon-right-open" })
+            )
+          )
+        )
+      })
+    );
   }
 
 }
 
 module.exports = { 
-  SwitchCarousel,
-  dataList,
-  Wrapper,
-  ListWrapper,
-  List
+  SwitchCarousel 
 };
