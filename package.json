@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/muyiwa-felixson/react-horizontal-switch-scroll/issues"
   },
+  "dependencies": {
+    "react-resize-detector": "^3.2.0",
+    "styled-components": "^4.0.0"
+  },
   "homepage": "https://github.com/muyiwa-felixson/react-horizontal-switch-scroll#readme"
 }
