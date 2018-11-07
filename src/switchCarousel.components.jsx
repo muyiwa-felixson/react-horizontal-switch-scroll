@@ -2,10 +2,11 @@
 import SwitchCarousel from './SwitchCarousel.components';
  * @file implement a carousel, depends on react 
  */
-const { React } = 'react';
-const { ReactResizeDetector } =  'react-resize-detector';
-const styled = 'styled-components';
-const { css } = 'styled-components';
+const { React } = require('react');
+const { ReactDOM } = require('react-dom');
+const { ReactResizeDetector } =  require('react-resize-detector');
+const styled = require('styled-components');
+const { css } = require('styled-components');
 
 const datatList = (Data) => {
   return Data.map((elem,INDEX) => {
