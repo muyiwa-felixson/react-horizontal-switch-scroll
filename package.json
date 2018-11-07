@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": " webpack --mode production &&  node dist/bundle.js"
+    "start": "webpack --mode production &&  node dist/bundle.js"
   },
   "repository": {
     "type": "git",
