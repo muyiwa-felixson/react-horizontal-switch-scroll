@@ -1,0 +1,23 @@
+{
+  "name": "react-horizontal-switch-scroll",
+  "version": "1.0.0",
+  "description": "Horizontal carousel scrollable with left/right buttons",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muyiwa-felixson/react-horizontal-switch-scroll.git"
+  },
+  "keywords": [
+    "scroller",
+    "carousel"
+  ],
+  "author": "Muyiwa Felixson-Yusuf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muyiwa-felixson/react-horizontal-switch-scroll/issues"
+  },
+  "homepage": "https://github.com/muyiwa-felixson/react-horizontal-switch-scroll#readme"
+}
