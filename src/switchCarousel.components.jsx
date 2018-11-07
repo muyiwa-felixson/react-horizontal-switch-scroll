@@ -1,10 +1,16 @@
-import React from 'react';
-import ReactResizeDetector from 'react-resize-detector';
-import styled, { css } from 'styled-components';
+/**
+import SwitchCarousel from './SwitchCarousel.components';
+ * @file implement a carousel, depends on react 
+ */
+const { React } = require('react');
+const { ReactDOM } = require('react-dom');
+const { ReactResizeDetector } =  require('react-resize-detector');
+const styled = require('styled-components');
+const { css } = require('styled-components');
 
 const datatList = (Data) => {
-  const days = Data.map((elem,INDEX) => {
-    return <div key={`SwitchCarousel-element-${INDEX}`} className="SwitchCarousel-element">{elem}</div>;
+  return Data.map((elem,INDEX) => {
+    return (<div key={`SwitchCarousel-element-${INDEX}`} className="SwitchCarousel-element">{elem}</div>);
   });
   return days;
 };
@@ -113,4 +119,10 @@ class SwitchCarousel extends React.Component {
 
 }
 
-export default SwitchCarousel;
+module.exports = { 
+  SwitchCarousel,
+  dataList,
+  Wrapper,
+  ListWrapper,
+  List
+};
