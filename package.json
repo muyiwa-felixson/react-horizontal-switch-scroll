@@ -21,7 +21,9 @@
   "bugs": {
     "url": "https://github.com/muyiwa-felixson/react-horizontal-switch-scroll/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "master": "^1.0.1"
+  },
   "homepage": "https://github.com/muyiwa-felixson/react-horizontal-switch-scroll#readme",
   "devDependencies": {
     "@babel/core": "^7.1.5",
