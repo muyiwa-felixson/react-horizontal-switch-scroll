@@ -1,6 +1,6 @@
 {
   "name": "react-horizontal-switch-scroll",
-  "version": "1.0.2",
+  "version": "1.1.2",
   "description": "Horizontal carousel scrollable with left/right buttons",
   "main": "dist/bundle.js",
   "scripts": {
