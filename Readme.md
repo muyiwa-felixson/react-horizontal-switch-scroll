@@ -9,7 +9,7 @@ $ npm install --save react-horizontal-switch-scroll
 ## Usage
 
 ```sh
-import SwitchCarousel from 'react-horizontal-switch-scroll'
+import { SwitchCarousel }  from 'react-horizontal-switch-scroll'
 
 const data = [
     {
