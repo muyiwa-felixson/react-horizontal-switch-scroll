@@ -36,10 +36,18 @@ const list = (data) => {
 }
 
 .....
+
+
 class React-Component extends React.Component {
+
+
 ......
+
+
 render() {
     return (
+
+        
 .....
 
         <SwitchCarousel
