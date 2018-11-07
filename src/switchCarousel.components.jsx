@@ -136,7 +136,5 @@ class  SwitchCarousel extends React.Component {
   }
 
 }
-
-module.exports = { 
-  SwitchCarousel 
-};
+console.log(SwitchCarousel);
+module.exports =  SwitchCarousel 
